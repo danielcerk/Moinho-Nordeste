@@ -7,16 +7,20 @@ export default function Header(){
   return(
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
     <div className="container flex h-16 items-center justify-between lg:max-w-[1200px] max-w-[90%] mx-auto">
-      <div className="flex items-center gap-2">
-        <Image
-          src="/logo.jpg"
-          alt="Moinho Nordeste Logo"
-          width={40}
-          height={40}
-          className="rounded-full border-3 border-black"
-        />
-        <span className="text-xl font-bold text-amber-700">Moinho Nordeste</span>
-      </div>
+      <Link href='/'>
+
+        <div className="flex items-center gap-2">
+          <Image
+            src="/logo.jpg"
+            alt="Moinho Nordeste Logo"
+            width={40}
+            height={40}
+            className="rounded-full border-3 border-black"
+          />
+          <span className="text-xl font-bold text-amber-700">Moinho Nordeste</span>
+        </div>
+
+      </Link>
       <nav className="hidden md:flex gap-6">
         <Link href="#sobre" className="text-sm font-medium hover:text-amber-700 transition-colors">
           Sobre
@@ -33,7 +37,9 @@ export default function Header(){
       </nav>
       <Button variant="outline" size="sm" className="hidden md:flex">
         <Phone className="mr-2 h-4 w-4" />
-        (75) 99169-6416
+        <Link href="tel:+5575991696416">
+            (75) 99169-6416
+        </Link>
       </Button>
       <Button variant="outline" size="icon" className="md:hidden">
         <svg

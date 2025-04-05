@@ -26,7 +26,9 @@ export default function Footer(){
           <div className="space-y-2 text-amber-100">
             <p className="flex items-center">
               <Phone className="h-4 w-4 mr-2" />
-              (75) 99169-6416
+              <Link href="tel:+5575991696416" className="hover:underline">
+                (75) 99169-6416
+              </Link>
             </p>
             <p className="flex items-center">
               <MapPin className="h-4 w-4 mr-2" />
@@ -60,7 +62,7 @@ export default function Footer(){
           <h3 className="font-bold text-lg mb-4">Redes Sociais</h3>
           <div className="flex space-x-4">
             <Link
-              href="#"
+              href="https://www.instagram.com/moinhonordeste_/" target="_blank"
               className="h-10 w-10 flex items-center justify-center rounded-full bg-amber-800 hover:bg-amber-700 transition-colors"
             >
               <svg
@@ -85,14 +87,10 @@ export default function Footer(){
       </div>
 
       <div className="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200 text-sm">
-        <p>Moinho Nordeste &copy; {new Date().getFullYear()} - Todos os direitos reservados</p>
-        <p className="mt-2">
-          <Link href="#" className="hover:text-white transition-colors">
-            Política de Privacidade
-          </Link>
-          {" | "}
-          <Link href="#" className="hover:text-white transition-colors">
-            Termos de Uso
+        <p><Link href='/'>Moinho Nordeste</Link> &copy; {new Date().getFullYear()} - Todos os direitos reservados</p>
+        <p className="mt-2">Desenvolvido por{' '}  
+          <Link href='https://marketilize.com.br/' legacyBehavior>
+            <a target="_blank" className="underline">Marketilize</a>
           </Link>
         </p>
       </div>
