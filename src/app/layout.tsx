@@ -7,11 +7,47 @@ import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Moinho Nordeste - Temperos Artesanais",
   description:
-    "Temperos e condimentos artesanais com a autêntica essência nordestina. Feito com alma, entregue com sabor.",
-}
+    "Descubra os melhores temperos e condimentos artesanais do Nordeste. Feitos com ingredientes selecionados e sabor autêntico!",
+  keywords: [
+    "temperos artesanais",
+    "condimentos naturais",
+    "culinária nordestina",
+    "produtos caseiros",
+    "Moinho Nordeste",
+    "ervas e especiarias"
+  ],
+  authors: [{ name: "Moinho Nordeste", url: "https://moinhonordesteoficial.com.br" }],
+  creator: "Moinho Nordeste",
+  themeColor: "#f59e0b", // cor âmbar, combina com temperos!
+  colorScheme: "light",
+  metadataBase: new URL("https://moinhonordesteoficial.com.br"),
+  openGraph: {
+    title: "Moinho Nordeste - Temperos Artesanais",
+    description:
+      "Explore nossa linha de temperos artesanais com a essência do Nordeste. Qualidade e sabor direto para sua cozinha.",
+    url: "https://moinhonordesteoficial.com.br",
+    siteName: "Moinho Nordeste",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Moinho Nordeste - Temperos Artesanais",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+};
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

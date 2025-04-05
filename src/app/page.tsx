@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Header from "@/components/common/Header"
 import Footer from "@/components/common/Footer"
 import { WhatsAppButton } from "@/components/common/whatsapp-button"
+import Link from "next/link"
 
 export default function Home() {
 
@@ -62,13 +63,6 @@ export default function Home() {
       <div className="absolute inset-0 z-20 flex items-center justify-center">
         <div className="container px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            {/* <Image   
-            src=""
-            alt="Moinho Nordeste"
-            width={100}
-            height={100}
-            className="rounded-full mx-auto">
-            </Image> */}
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white drop-shadow-lg">
               Temperos que contam histórias do Nordeste
             </h1>
@@ -76,15 +70,19 @@ export default function Home() {
               "Feito com alma, entregue com sabor."
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="border-[#F1C40F] bg-white hover:bg-[#1f1e1d] text-gray-900 hover:text-white shadow-lg cursor-pointer p-8 transition-all">
-                Peça Agora
-              </Button>
-              <Button
-                variant="outline"
-                className="border-[#F1C40F] text-gray-900 hover:bg-[#1f1e1d] hover:text-white shadow-lg cursor-pointer p-8 transition-all"
-              >
-                Conheça Nossos Produtos
-              </Button>
+              <Link href="https://wa.me/5575991696416?text=Olá, Gostaria de realizar um pedido!">
+                <Button className="border-[#F1C40F] bg-white hover:bg-[#1f1e1d] text-gray-900 hover:text-white shadow-lg cursor-pointer p-8 transition-all">
+                  Peça Agora
+                </Button>
+              </Link>
+              <Link href="#produtos">
+                <Button
+                  variant="outline"
+                  className="border-[#F1C40F] text-gray-900 hover:bg-[#1f1e1d] hover:text-white shadow-lg cursor-pointer p-8 transition-all"
+                >
+                  Conheça Nossos Produtos
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -141,7 +139,7 @@ export default function Home() {
               <div className="group relative overflow-hidden rounded-lg border bg-white shadow-md transition-all hover:shadow-lg">
                 <div className="aspect-square relative bg-amber-100">
                   <Image
-                    src="/placeholder.svg?height=300&width=300"
+                    src="/condimento.png"
                     alt="Tempero Baiano"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -161,7 +159,7 @@ export default function Home() {
               <div className="group relative overflow-hidden rounded-lg border bg-white shadow-md transition-all hover:shadow-lg">
                 <div className="aspect-square relative bg-amber-100">
                   <Image
-                    src="/placeholder.svg?height=300&width=300"
+                    src="/condimento.png"
                     alt="Pimenta Artesanal"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -181,7 +179,7 @@ export default function Home() {
               <div className="group relative overflow-hidden rounded-lg border bg-white shadow-md transition-all hover:shadow-lg">
                 <div className="aspect-square relative bg-amber-100">
                   <Image
-                    src="/placeholder.svg?height=300&width=300"
+                    src="/condimento.png"
                     alt="Colorau Premium"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -330,9 +328,12 @@ export default function Home() {
                 <h3 className="text-xl font-bold">Frete Grátis para Serrinha</h3>
                 <p>Em compras acima de R$ 50,00</p>
               </div>
-              <Button size="lg" className="bg-white text-amber-700 hover:bg-amber-100">
-                Aproveite Agora
-              </Button>
+              <Link href="https://wa.me/5575991696416?text=Olá, quero aproveitar o frete grátis!" target="_blank"
+                  rel="noopener noreferrer">
+                  <Button size="lg" className="bg-white text-amber-700 hover:bg-amber-100 cursor-pointer">
+                    Aproveite Agora
+                  </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -352,7 +353,7 @@ export default function Home() {
                       <h3 className="font-bold">Telefone</h3>
                       <p className="text-gray-700">(75) 99169-6416</p>
                       <Button variant="link" className="p-0 h-auto text-amber-700 font-bold">
-                        Ligar Agora
+                        <Link href="tel:+5575991696416">Ligar Agora</Link>
                       </Button>
                     </div>
                   </div>
