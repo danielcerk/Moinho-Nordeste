@@ -1,0 +1,21 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+.bg-color-primary{
+  background-color: #c64727;
+}
+
+.bg-color-secondary{
+  background-color: #fcbd20;
+}
+
+
+.text-color-primary{
+  background-color: #c64727;
+}
+
+.text-color-secondary{
+  background-color: #fcbd20;
+}
