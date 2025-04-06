@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../assets/style/globals.css";
 import "../assets/style/general.css";
+import Script from "next/script"; // <-- Importa o Script
 
-import { Inter } from "next/font/google"
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Moinho Nordeste - Temperos Artesanais",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Moinho Nordeste", url: "https://moinhonordesteoficial.com.br" }],
   creator: "Moinho Nordeste",
-  themeColor: "#f59e0b", // cor âmbar, combina com temperos!
+  themeColor: "#f59e0b",
   colorScheme: "light",
   metadataBase: new URL("https://moinhonordesteoficial.com.br"),
   openGraph: {
@@ -48,7 +49,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -58,7 +58,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 
 export default function RootLayout({
   children,
@@ -70,6 +69,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Scripts do Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3Z3XFNZLY3"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3Z3XFNZLY3');
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
