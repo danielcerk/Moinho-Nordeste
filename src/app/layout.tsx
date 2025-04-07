@@ -8,10 +8,16 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
+
+export const viewport = {
+  themeColor: "#f59e0b",
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
   title: "Moinho Nordeste - Temperos Artesanais",
-  description:
-    "Descubra os melhores temperos e condimentos artesanais do Nordeste. Feitos com ingredientes selecionados e sabor autêntico!",
+  description: "Descubra os melhores temperos e condimentos artesanais do Nordeste. Feitos com ingredientes selecionados e sabor autêntico!",
   keywords: [
     "temperos artesanais",
     "condimentos naturais",
@@ -22,13 +28,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Moinho Nordeste", url: "https://moinhonordesteoficial.com.br" }],
   creator: "Moinho Nordeste",
-  themeColor: "#f59e0b",
-  colorScheme: "light",
   metadataBase: new URL("https://moinhonordesteoficial.com.br"),
   openGraph: {
     title: "Moinho Nordeste - Temperos Artesanais",
-    description:
-      "Explore nossa linha de temperos artesanais com a essência do Nordeste. Qualidade e sabor direto para sua cozinha.",
+    description: "Explore nossa linha de temperos artesanais com a essência do Nordeste. Qualidade e sabor direto para sua cozinha.",
     url: "https://moinhonordesteoficial.com.br",
     siteName: "Moinho Nordeste",
     images: [

@@ -68,66 +68,65 @@ export default function Home() {
   const produtos = [
     {
       id: 1,
-      nome: "Tempero Baiano",
-      descricao:
-        "Mistura tradicional com pimentas selecionadas e ervas aromáticas. Ideal para feijão, carnes e ensopados.",
-      imagem: "/condimento.png",
+      nome: "Colorifico Nordeste 25kg",
+      descricao: "Tempero artesanal nordestino para dar cor e sabor aos seus pratos, embalagem econômica de 25kg",
+      imagem: "/products/colorifico-25kg.jpeg"
     },
     {
       id: 2,
-      nome: "Pimenta Artesanal",
-      descricao:
-        "Pimentas cultivadas em solo nordestino, secas ao sol e moídas na hora. Sabor intenso com aroma inconfundível.",
-      imagem: "/condimento.png",
+      nome: "Pimenta Moída Nordeste 1kg",
+      descricao: "Pimenta vermelha moída na medida certa, tradição nordestina em embalagem de 1kg",
+      imagem: "/products/pimenta-moida-1kg.jpeg"
     },
     {
       id: 3,
-      nome: "Colorau Premium",
-      descricao: "Extraído das sementes de urucum, traz cor vibrante e sabor suave às suas receitas. 100% natural.",
-      imagem: "/condimento.png",
+      nome: "Açafrão Nordeste 500g",
+      descricao: "Açafrão da terra puro e de qualidade, coloração intensa em embalagem de 500g",
+      imagem: "/products/acafrao-500g.jpeg"
     },
     {
       id: 4,
-      nome: "Cominho Sertanejo",
-      descricao:
-        "Cominho cultivado no sertão nordestino, com aroma intenso e sabor marcante. Perfeito para carnes, feijão e arroz.",
-      imagem: "/condimento.png",
+      nome: "Açafrão Nordeste 25kg",
+      descricao: "Açafrão premium para uso profissional, embalagem bulk de 25kg",
+      imagem: "/products/acafrao-25kg.jpeg"
     },
     {
       id: 5,
-      nome: "Mix de Ervas Finas",
-      descricao:
-        "Combinação equilibrada de ervas aromáticas cultivadas organicamente. Ideal para peixes, aves e saladas.",
-      imagem: "/condimento.png",
+      nome: "Condimento Misto Nordeste 100g",
+      descricao: "Blend especial com cominho e pimenta do reino, o toque perfeito para carnes em embalagem de 100g",
+      imagem: "/products/condimento-misto-100g.jpeg"
     },
     {
       id: 6,
-      nome: "Sal de Ervas Nordestino",
-      descricao:
-        "Sal marinho enriquecido com ervas típicas do Nordeste. Baixo teor de sódio e alto sabor para suas refeições.",
-      imagem: "/condimento.png",
+      nome: "Colorifico Nordeste 100g",
+      descricao: "Versão prática do tradicional colorau nordestino em embalagem de 100g",
+      imagem: "/products/colorifico-100g.jpeg"
     },
     {
       id: 7,
-      nome: "Pimenta Malagueta em Conserva",
-      descricao:
-        "Pimentas malagueta conservadas em azeite de oliva e ervas aromáticas. Adiciona um toque picante às suas receitas.",
-      imagem: "/condimento.png",
+      nome: "Colorifico Nordeste 500g",
+      descricao: "Tempero básico da culinária nordestina em embalagem média de 500g",
+      imagem: "/products/colorifico-500g.jpeg"
     },
     {
       id: 8,
-      nome: "Tempero para Churrasco",
-      descricao:
-        "Blend especial de ervas e especiarias para realçar o sabor das carnes grelhadas. Indispensável nos seus churrascos.",
-      imagem: "/condimento.png",
+      nome: "Canela em Pó Nordeste 30g",
+      descricao: "Canela moída finamente, aroma acentuado em embalagem de 30g",
+      imagem: "/products/canela-po-30g.jpeg"
     },
     {
       id: 9,
-      nome: "Alho Desidratado",
-      descricao: "Alho cultivado no agreste, desidratado e moído. Prático e com todo o sabor do alho fresco.",
-      imagem: "/condimento.png",
+      nome: "Açafrão Nordeste 1kg",
+      descricao: "Versão econômica do nosso açafrão tradicional em embalagem de 1kg",
+      imagem: "/products/acafrao-1kg.jpeg"
     },
-  ]
+    {
+      id: 10,
+      nome: "Pimenta Moída Nordeste 500g",
+      descricao: "Intensidade da pimenta nordestina em embalagem média de 500g",
+      imagem: "/products/pimenta-moida-500g.jpeg"
+    }
+  ];
 
   const [showAll, setshowAll] = useState(false)
 
@@ -140,6 +139,12 @@ export default function Home() {
       document.getElementById("produtos")?.scrollIntoView({ behavior: "smooth" })
     }
   }
+
+  const handleWhatsAppClick = (produto: any) => {
+    const mensagem = `Olá, gostaria de saber mais sobre o *${produto.nome}* da Nordeste! 🌶️\n\n${produto.descricao}\n\nPodemos conversar sobre este produto? 😊`;
+    const url = `https://wa.me/5575991696416?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className="flex min-h-screen flex-col overflow-hidden">
@@ -289,70 +294,76 @@ export default function Home() {
         </section>
 
         {/* Products Section */}
-    <section id="produtos" className="py-16" ref={refs.products}>
-      <div className="container px-4 md:px-6 lg:max-w-[1200px] max-w-[90%] mx-auto">
-        <motion.div
-          initial="hidden"
-          animate={isInView.products ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="text-center mb-10"
-        >
-          <motion.h2 variants={fadeIn} className="text-3xl font-bold tracking-tighter sm:text-4xl text-amber-900">
-            {showAll ? "Todos os Nossos Produtos" : "Nossos Produtos"}
-          </motion.h2>
-          <motion.p variants={fadeIn} className="mt-4 text-gray-700 md:text-lg max-w-3xl mx-auto">
-            {showAll
-              ? "Explore nossa linha completa de temperos artesanais nordestinos, produzidos com ingredientes selecionados e técnicas tradicionais."
-              : "Descubra o sabor autêntico do Nordeste em cada um de nossos temperos artesanais, cuidadosamente preparados para transformar suas receitas."}
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          animate={isInView.products ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {produtosExibidos.map((produto) => (
+        <section id="produtos" className="py-16 bg-gradient-to-b from-amber-50 to-white" ref={refs.products}>
+          <div className="container px-4 md:px-6 lg:max-w-[1200px] max-w-[90%] mx-auto">
             <motion.div
-              key={produto.id}
-              variants={scaleUp}
-              className="group relative overflow-hidden rounded-lg border bg-white shadow-md transition-all hover:shadow-lg hover:-translate-y-1"
+              initial="hidden"
+              animate={isInView.products ? "visible" : "hidden"}
+              variants={staggerContainer}
+              className="text-center mb-12"
             >
-              <div className="aspect-square relative bg-amber-100">
-                <Image
-                  src={produto.imagem || "/placeholder.svg"}
-                  alt={produto.nome}
-                  fill
-                  className="object-cover transition-transform group-hover:scale-105"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-amber-800">{produto.nome}</h3>
-                <p className="mt-2 text-gray-600">{produto.descricao}</p>
-                <Button className="mt-4 w-full bg-amber-600 hover:bg-amber-700">Saiba Mais</Button>
-              </div>
+              <motion.h2 variants={fadeIn} className="text-3xl font-bold tracking-tight sm:text-4xl text-amber-900 bg-clip-text">
+                {showAll ? "Todos os Nossos Produtos" : "Nossos Produtos"}
+              </motion.h2>
+              <motion.p variants={fadeIn} className="mt-4 text-gray-600 md:text-lg/relaxed max-w-3xl mx-auto">
+                {showAll
+                  ? "Explore nossa linha completa de temperos artesanais nordestinos, produzidos com ingredientes selecionados e técnicas tradicionais."
+                  : "Descubra o sabor autêntico do Nordeste em cada um de nossos temperos artesanais, cuidadosamente preparados para transformar suas receitas."}
+              </motion.p>
             </motion.div>
-          ))}
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView.products ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3 }}
-          className="mt-10 text-center"
-        >
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-amber-600 text-amber-700 hover:bg-amber-50"
-            onClick={toggleshowAll}
-          >
-            {showAll ? "Mostrar Menos Produtos" : "Ver Todos os Produtos"}
-          </Button>
-        </motion.div>
-      </div>
-    </section>
+            <motion.div
+              initial="hidden"
+              animate={isInView.products ? "visible" : "hidden"}
+              variants={staggerContainer}
+              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {produtosExibidos.map((produto) => (
+                <motion.div
+                  key={produto.id}
+                  variants={scaleUp}
+                  className="group relative overflow-hidden rounded-2xl border border-amber-100/30 bg-white/95 backdrop-blur-sm shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+                >
+                  <div className="aspect-square relative bg-gradient-to-br from-amber-50 to-amber-100">
+                    <Image
+                      src={produto.imagem || "/placeholder.svg"}
+                      alt={produto.nome}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      style={{ borderTopLeftRadius: '1rem', borderTopRightRadius: '1rem' }}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-amber-900">{produto.nome}</h3>
+                    <p className="mt-3 text-gray-500 text-sm leading-relaxed">{produto.descricao}</p>
+                    <Button 
+                      className="mt-6 w-full bg-amber-600 hover:bg-amber-700 text-white transition-colors duration-300 rounded-lg cursor-pointer"
+                      onClick={() => handleWhatsAppClick(produto)}
+                    >
+                      Saiba Mais
+                    </Button>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView.products ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.3 }}
+              className="mt-12 text-center"
+            >
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-amber-600 text-amber-700 hover:bg-amber-50 hover:border-amber-700 rounded-xl transition-all duration-300 cursor-pointer"
+                onClick={toggleshowAll}
+              >
+                {showAll ? "Mostrar Menos Produtos" : "Ver Todos os Produtos"}
+              </Button>
+            </motion.div>
+          </div>
+        </section>
 
         {/* Differentials Section */}
         <section id="diferenciais" className="py-24 bg-gradient-to-br from-amber-800 to-red-800 text-white" ref={refs.differentials}>
@@ -544,6 +555,7 @@ export default function Home() {
               variants={staggerContainer}
               className="grid gap-10 lg:grid-cols-2"
             >
+              {/* Coluna Esquerda - Informações de Contato */}
               <motion.div variants={slideInFromLeft}>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-amber-900 mb-6">
                   Entre em Contato
@@ -559,6 +571,7 @@ export default function Home() {
                       </Button>
                     </div>
                   </div>
+                  
                   <div className="flex items-start">
                     <MapPin className="h-5 w-5 mr-3 text-amber-700 mt-0.5" />
                     <div>
@@ -566,6 +579,7 @@ export default function Home() {
                       <p className="text-gray-700">Av. Lomanto Júnior, Serrinha-BA</p>
                     </div>
                   </div>
+                  
                   <div className="flex items-start">
                     <Clock className="h-5 w-5 mr-3 text-amber-700 mt-0.5" />
                     <div>
@@ -577,6 +591,7 @@ export default function Home() {
                 </div>
               </motion.div>
 
+              {/* Coluna Direita - WhatsApp */}
               <motion.div 
                 variants={slideInFromRight}
                 className="bg-amber-50 p-6 rounded-lg text-center"
@@ -608,8 +623,47 @@ export default function Home() {
                 </p>
               </motion.div>
             </motion.div>
+
+            {/* Seção do Mapa */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView.contact ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-16"
+            >
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-amber-900">
+                  Onde Estamos
+                </h2>
+                <p className="mt-4 text-gray-600 md:text-lg max-w-3xl mx-auto">
+                  Venha nos visitar e conhecer nossa produção de perto
+                </p>
+              </div>
+
+              <div className="rounded-2xl overflow-hidden shadow-xl border-2 border-amber-100">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.3903260361903!2d-39.00550451553412!3d-11.666725505378984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7138db7397f185b%3A0x4e8cac3164bfef65!2sMoinho%20Nordeste%20ind%C3%BAstria%20de%20condimentos!5e0!3m2!1spt-BR!2sbr!4v1744062371648!5m2!1spt-BR!2sbr" 
+                  width="100%" 
+                  height="450" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="border-0"
+                ></iframe>
+              </div>
+
+              <div className="mt-8 text-center space-y-2">
+                <p className="text-amber-900 font-medium">
+                  <MapPin className="inline-block mr-2 h-5 w-5" />
+                  Av. Lomanto Júnior, Serrinha - BA
+                </p>
+                <p className="text-gray-600">
+                  Horário de Visitação: Segunda a Sexta, das 8h às 17h
+                </p>
+              </div>
+            </motion.div>
           </div>
         </section>
+
       </main>
 
       <WhatsAppButton phoneNumber="5575991696416" />

@@ -19,18 +19,20 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 overflow-hidden">
       <div className="container flex h-16 items-center justify-between lg:max-w-[1200px] max-w-[90%] mx-auto">
-        <Link href="/">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/logo.jpg"
-              alt="Moinho Nordeste Logo"
-              width={40}
-              height={40}
-              className="rounded-full border-3 border-black"
-            />
-            <span className="text-xl font-bold text-amber-700">Moinho Nordeste</span>
-          </div>
-        </Link>
+      <Link href="/">
+        <div className="flex items-center gap-3 p-1.5 pr-4 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 group">
+          <Image
+            src="/logo.jpg"
+            alt="Moinho Nordeste Logo"
+            width={48}
+            height={48}
+            className="rounded-full border-[3px] border-amber-600 group-hover:border-amber-700 transition-colors duration-300 shadow-lg group-hover:shadow-md"
+          />
+          <span className="text-xl font-semibold bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 bg-clip-text text-transparent group-hover:from-amber-800 group-hover:to-amber-900 transition-all duration-500">
+            Moinho Nordeste
+          </span>
+        </div>
+      </Link>
         <nav className="hidden md:flex gap-6">
           <Link href="#sobre" className="text-sm font-medium hover:text-amber-700 transition-colors">
             Sobre
@@ -45,9 +47,18 @@ export default function Header() {
             Contato
           </Link>
         </nav>
-        <Button variant="outline" size="sm" className="hidden md:flex">
-          <Phone className="mr-2 h-4 w-4" />
-          <Link href="tel:+5575991696416">(75) 99169-6416</Link>
+        <Button
+          variant="outline"
+          size="sm"
+          className="hidden md:flex items-center border-amber-600 text-amber-700 hover:bg-amber-50/80 hover:text-amber-800 hover:border-amber-700 transition-all duration-300 rounded-full shadow-sm hover:shadow-md gap-2 backdrop-blur-sm bg-white/90"
+        >
+          <Phone className="h-4 w-4 text-amber-600 animate-pulse hover:animate-none" />
+          <Link 
+            href="tel:+5575991696416" 
+            className="font-medium hover:underline underline-offset-4 decoration-amber-600"
+          >
+            (75) 99169-6416
+          </Link>
         </Button>
 
   
