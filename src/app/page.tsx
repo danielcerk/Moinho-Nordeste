@@ -534,7 +534,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="mb-4 md:mb-0">
                 <h3 className="text-xl font-bold">Frete Grátis para Serrinha</h3>
-                <p>Em compras acima de R$ 50,00</p>
+                <p>Consultar Valores *</p>
               </div>
               <Link href="https://wa.me/5575991696416?text=Olá, quero aproveitar o frete grátis!" target="_blank"
                   rel="noopener noreferrer">
