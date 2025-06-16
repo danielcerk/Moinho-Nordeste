@@ -11,12 +11,12 @@ export default function Footer(){
           <div className="flex items-center gap-2 mb-4">
             <Image
               src="/logo.jpg"
-              alt="Moinho Nordeste Logo"
+              alt="Condimentos Nordeste Logo"
               width={40}
               height={40}
               className="rounded-md bg-white"
             />
-            <span className="text-xl font-bold">Moinho Nordeste</span>
+            <span className="text-xl font-bold">Condimentos Nordeste</span>
           </div>
           <p className="text-amber-200 text-sm">"Feito com alma, entregue com sabor."</p>
         </div>
@@ -87,7 +87,7 @@ export default function Footer(){
       </div>
 
       <div className="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200 text-sm">
-        <p><Link href='/'>Moinho Nordeste</Link> &copy; {new Date().getFullYear()} - Todos os direitos reservados</p>
+        <p><Link href='/'>Condimentos Nordeste</Link> &copy; {new Date().getFullYear()} - Todos os direitos reservados</p>
         <p className="mt-2">Desenvolvido por{' '}  
           <Link href='https://marketilize.com.br/' legacyBehavior>
             <a target="_blank" className="underline">Marketilize</a>

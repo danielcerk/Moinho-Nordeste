@@ -23,13 +23,13 @@ export default function Header() {
         <div className="flex items-center gap-3 p-1.5 pr-4 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 group">
           <Image
             src="/logo.jpg"
-            alt="Moinho Nordeste Logo"
+            alt="Condimentos Nordeste Logo"
             width={48}
             height={48}
             className="rounded-full border-[3px] border-amber-600 group-hover:border-amber-700 transition-colors duration-300 shadow-lg group-hover:shadow-md"
           />
           <span className="text-xl font-semibold bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 bg-clip-text text-transparent group-hover:from-amber-800 group-hover:to-amber-900 transition-all duration-500">
-            Moinho Nordeste
+            Condimentos Nordeste
           </span>
         </div>
       </Link>

@@ -16,30 +16,30 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Moinho Nordeste - Temperos Artesanais",
+  title: "Condimentos Nordeste - Temperos Artesanais",
   description: "Descubra os melhores temperos e condimentos artesanais do Nordeste. Feitos com ingredientes selecionados e sabor autêntico!",
   keywords: [
     "temperos artesanais",
     "condimentos naturais",
     "culinária nordestina",
     "produtos caseiros",
-    "Moinho Nordeste",
+    "Condimentos Nordeste",
     "ervas e especiarias"
   ],
-  authors: [{ name: "Moinho Nordeste", url: "https://moinhonordesteoficial.com.br" }],
-  creator: "Moinho Nordeste",
+  authors: [{ name: "Condimentos Nordeste", url: "https://moinhonordesteoficial.com.br" }],
+  creator: "Condimentos Nordeste",
   metadataBase: new URL("https://moinhonordesteoficial.com.br"),
   openGraph: {
-    title: "Moinho Nordeste - Temperos Artesanais",
+    title: "Condimentos Nordeste - Temperos Artesanais",
     description: "Explore nossa linha de temperos artesanais com a essência do Nordeste. Qualidade e sabor direto para sua cozinha.",
     url: "https://moinhonordesteoficial.com.br",
-    siteName: "Moinho Nordeste",
+    siteName: "Condimentos Nordeste",
     images: [
       {
         url: "/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "Moinho Nordeste - Temperos Artesanais",
+        alt: "Condimentos Nordeste - Temperos Artesanais",
       },
     ],
     locale: "pt_BR",
